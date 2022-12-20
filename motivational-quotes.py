@@ -30,16 +30,15 @@ def main():
     print(ran['q'])
     
 
-    api.update_status(ran['q'])
+    return api.update_status(ran['q'])
 
 
 
-if __name__ == '__main__':
     
 
-    schedule.every(5).minutes.do(main)
+schedule.every(1).minutes.do(main)
     
-    while True:
-        schedule.run_pending()
-        time.sleep(5)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
